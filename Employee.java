@@ -196,3 +196,67 @@ class Solution {
         sc.close();
     }
 }
+
+
+
+Execution Flow:
+Reading the Number of Employees:
+
+The first input value 4 is read, indicating there are 4 employees. This number is stored in n and used to create an array of Employee objects named employees.
+Reading Employee Details:
+
+For each employee, the following data is read in sequence:
+
+Employee 1: employeeId = 101, employeeName = "John", age = 30, gender = 'M', salary = 10000.00.
+Employee 2: employeeId = 102, employeeName = "Samantha", age = 25, gender = 'F', salary = 15000.00.
+Employee 3: employeeId = 103, employeeName = "Alex", age = 28, gender = 'M', salary = 12000.00.
+Employee 4: employeeId = 104, employeeName = "Lisa", age = 30, gender = 'F', salary = 15000.00.
+Each set of details is used to create an Employee object, which is stored in the employees array.
+
+Reading Age for Counting:
+
+The last input value 30 is read and stored in ageToCount, representing the age for which we want to count the employees.
+Finding Employee with the Second-Lowest Salary:
+
+The getEmployeeWithSecondLowestSalary method is called with the employees array as the argument.
+
+Inside this method:
+
+employees is sorted by salary in ascending order using Arrays.sort with a custom comparator on the salary attribute. After sorting, the employees are ordered as follows by salary:
+Employee 1 (John) with salary = 10000.00
+Employee 3 (Alex) with salary = 12000.00
+Employee 2 (Samantha) with salary = 15000.00
+Employee 4 (Lisa) with salary = 15000.00
+The lowest salary, 10000.00, is identified. A loop then checks for the first salary greater than 10000.00, which is 12000.00, belonging to Employee 3 (Alex).
+Employee 3 (Alex) is returned as the employee with the second-lowest salary.
+In the main method:
+
+The result is printed as 103#Alex (employeeId and employeeName of Employee 3 (Alex)), as he has the second-lowest salary in the sorted list.
+Counting Employees Based on Age:
+
+The countEmployeesBasedOnAge method is called with the employees array and ageToCount (30) as arguments.
+
+Inside this method:
+
+A loop iterates over each Employee object in employees to check if the age matches 30.
+Employee 1 (John) and Employee 4 (Lisa) both have age = 30, so the count is incremented twice.
+The final count, 2, is returned to the main method.
+In the main method:
+
+Since the count is 2, it is printed as-is, yielding the output 2.
+Final Output:
+Based on the above steps, the final output for this input is:
+
+bash
+Copy code
+103#Alex
+2
+Explanation of Output:
+103#Alex:
+
+This output corresponds to the employee with the second-lowest salary, which is Employee 3 (Alex) with a salary of 12000.00.
+2:
+
+This output represents the count of employees aged 30, which includes Employee 1 (John) and Employee 4 (Lisa).
+
+
